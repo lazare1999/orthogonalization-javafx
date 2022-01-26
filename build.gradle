@@ -25,7 +25,7 @@ tasks.withType(JavaCompile) {
 
 application {
     mainModule = 'com.lazo.orthogonalization_javafx'
-    mainClass = 'com.lazo.orthogonalization_javafx.HelloApplication'
+    mainClass = 'com.lazo.orthogonalization_javafx.OrthogonalizationApplication'
 }
 
 javafx {
