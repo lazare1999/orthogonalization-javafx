@@ -67,7 +67,7 @@ jlink {
             ]
         }
         if (installerType == 'pkg') {
-            imageOptions += ['--icon', 'src/main/resources/icon.icns']
+            imageOptions += ['--icon', 'src/main/resources/icon.png']
         }
         if (installerType in ['deb', 'rpm']) {
             imageOptions += ['--icon', 'src/main/resources/icon.png']
