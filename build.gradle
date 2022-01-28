@@ -6,7 +6,7 @@ plugins {
 }
 
 group 'com.lazo'
-version '1.0-SNAPSHOT'
+version '1.1.1'
 
 repositories {
     mavenCentral()
@@ -48,7 +48,6 @@ jlink {
         requires 'java.naming';
         requires 'javafx.controls';
         requires 'jdk.javadoc';
-//        provides 'org.tinylog.provider.LoggingProvider' with 'org.tinylog.core.TinylogLoggingProvider';
     }
     options = ['--strip-debug', '--compress', '2', '--no-header-files', '--no-man-pages']
     launcher {
@@ -56,11 +55,10 @@ jlink {
     }
     jpackage {
         installerOptions = [
-                '--copyright', 'Copyrigth 2022-now WALCZAK.IT'
+                '--copyright', 'Copyrigth 2022-now'
         ]
         installerType = project.findProperty('installerType')
         if (installerType == 'msi') {
-            imageOptions += ['--icon', 'src/main/resources/icon.png']
             installerOptions += [
                     '--win-per-user-install', '--win-dir-chooser',
                     '--win-menu', '--win-shortcut'
@@ -99,9 +97,6 @@ dependencies {
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
-
-    // https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc
-    implementation 'org.xerial:sqlite-jdbc:3.36.0.3'
 
 }
 
